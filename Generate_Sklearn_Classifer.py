@@ -23,7 +23,7 @@ with open("cleaned_train", "r") as ins:
         if (i == 0):
             i += 1
             continue
-        L = map(int, line1[:-1])
+        L = list(map(int, line1[:-1]))
         # L[sens_arg-1]=-1
         X.append(L)
 
@@ -37,7 +37,7 @@ with open("cleaned_train", "r") as ins:
 
 X = np.array(X)
 Y = np.array(Y)
-print neg_count, pos_count
+print(neg_count, pos_count)
 
 # w = svm.SVC(gamma=0.0025)
 
@@ -45,5 +45,5 @@ print neg_count, pos_count
 #                       hidden_layer_sizes=(7, 5), random_state=1)
 model = DecisionTreeClassifier()
 model.fit(X, Y)
-print cross_val_score(model, X, Y, scoring='accuracy')
+print(cross_val_score(model, X, Y, scoring='accuracy'))
 joblib.dump(model, 'Decision_tree_standard_unfair.pkl')
