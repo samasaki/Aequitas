@@ -14,7 +14,7 @@ import random
 import time
 from scipy.optimize import basinhopping
 import config
-from sklearn.externals import joblib
+import joblib
 
 random.seed(time.time())
 start_time = time.time()
