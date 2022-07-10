@@ -155,7 +155,7 @@ def evaluate_global(inp):
         global_disc_inputs.add(tuple(inp0))
         global_disc_inputs_list.append(inp0)
 
-    return not abs(out0 - out1) > threshold
+    return int(not abs(out0 - out1) > threshold)
     # for binary classification, we have found that the
     # following optimization function gives better results
     # return abs(out1 + out0) == 0
@@ -175,7 +175,7 @@ def evaluate_local(inp):
         local_disc_inputs.add(tuple(inp0))
         local_disc_inputs_list.append(inp0)
 
-    return not abs(out0 - out1) > threshold
+    return int(not abs(out0 - out1) > threshold)
     # for binary classification, we have found that the
     # following optimization function gives better results
     # return abs(out1 + out0)
