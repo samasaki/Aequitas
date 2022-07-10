@@ -293,7 +293,7 @@ def get_one_hot_encoding(in_arr):
     """
 
     for k in in_arr:
-        if str(type(k)) != "<type 'numpy.float64'>" and type(k) != int and type(k) != np.int64:
+        if type(k) != np.float64 and type(k) != int and type(k) != np.int64:
             print(str(type(k)))
             print("************* ERROR: Input arr does not have integer types")
             return None
